@@ -1,0 +1,15 @@
+#loginWrapper {
+    background-color: #47525e;
+    margin: 0;
+    height: 100%;
+  }
+  #loginWrapper .imageLogin {
+    width: 130px;
+    height: 130px;
+}
+  @media (max-width: 500px) {
+    #loginWrapper .imageLogin {
+        width: 100px;
+        height: 100px;
+        }
+  }

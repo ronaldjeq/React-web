@@ -1,0 +1,11 @@
+#components-form-demo-normal-login .login-form {
+    max-width: 300px;
+  }
+  #components-form-demo-normal-login .login-form-forgot {
+    float: right;
+  }
+  #LoginForm .ant-btn.login-form-button {
+    width: 100%;
+    background-color: #f7c600 !important;
+
+  }
