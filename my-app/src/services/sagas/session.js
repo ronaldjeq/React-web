@@ -1,4 +1,4 @@
-import { put, call, select } from "redux-saga/effects";
+import { put} from "redux-saga/effects";
 import {
   TOKEN_NOT_FOUND,
   LOGIN_REQUEST_SUCCESS

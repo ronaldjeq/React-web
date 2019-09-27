@@ -1,11 +1,11 @@
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button } from 'antd';
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { loginRequest,getStoredToken } from "../../../actions/session";
+import { loginRequest } from "../../../actions/session";
 
 import './LoginForm.css'
-class NormalLoginForm extends React.Component {
+class NormalLoginForm extends Component {
     static propTypes = {
         dispatch: PropTypes.func,
         token: PropTypes.string

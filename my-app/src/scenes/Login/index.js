@@ -1,22 +1,12 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { Row, Col } from 'antd';
 import "./index.css";
 import LoginForm from './components/LoginForm'
-//import logo from '../../../public/comercio_logo.png'
-/**
- * TODO
- * - Test when token expiration
- */
+
 
 class Login extends Component {
-//   static propTypes = {
-//     token: PropTypes.string
-//   };
 
-  componentDidMount() {
 
-  }
 
   render() {
 

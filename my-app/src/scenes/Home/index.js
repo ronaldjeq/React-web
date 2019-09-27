@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
-import {  getStoredToken } from "../../actions/session";
 import PropTypes from "prop-types";
 
 import history from '../../services/history';
@@ -9,17 +8,20 @@ import history from '../../services/history';
 class Home extends Component {
   constructor(props, context) {
     super(props, context);
-   this.props.dispatch(getStoredToken())
+    this.state={
+      Sessiontoken:localStorage.getItem('userToken')
+    }
   }
   static propTypes = {
     dispatch: PropTypes.func,
     token: PropTypes.string,
   };
-componentDidMount(){
-}
+
+
+
   render() {
-    const {token} =this.props;
-    if (!this.props.token) {
+    const { Sessiontoken } =this.state;
+    if (!Sessiontoken) {
       history.push('/login');
     }
     return (
