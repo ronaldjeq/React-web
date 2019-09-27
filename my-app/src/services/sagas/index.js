@@ -1,15 +1,16 @@
 import { takeEvery, call, spawn, all } from "redux-saga/effects";
 
-import {  GET_STORED_TOKEN } from "../../actions/session";
+import {  GET_STORED_TOKEN, LOGIN_REQUEST } from "../../actions/session";
 
 import {
-  handleGetStoredTokenAction
+  handleGetStoredTokenAction,
+  handleLoginRequestAction
 } from "./session";
-
 
 
 function* sessionSaga() {
   yield takeEvery(GET_STORED_TOKEN, handleGetStoredTokenAction);
+  yield takeEvery(LOGIN_REQUEST,handleLoginRequestAction );
 }
 
 

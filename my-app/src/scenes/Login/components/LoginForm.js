@@ -2,7 +2,7 @@ import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getStoredToken } from "../../../actions/session";
+import { loginRequest,getStoredToken } from "../../../actions/session";
 
 import './LoginForm.css'
 class NormalLoginForm extends React.Component {
@@ -17,7 +17,8 @@ class NormalLoginForm extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        dispatch(getStoredToken());
+         const {username, password}=values
+        dispatch(loginRequest(username, password));
       }
     });
   };

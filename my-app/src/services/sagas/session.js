@@ -1,8 +1,9 @@
 import { put, call, select } from "redux-saga/effects";
 import {
-  GET_STORED_TOKEN,
-  TOKEN_NOT_FOUND
+  TOKEN_NOT_FOUND,
+  LOGIN_REQUEST_SUCCESS
 } from "../../actions/session";
+import history from "../history";
 
 // import API from "../api";
 
@@ -21,15 +22,18 @@ const SESSION_TOKEN = "userToken";
 const saveToken = token => localStorage.setItem(SESSION_TOKEN, token);
 
 export function* handleGetStoredTokenAction(/*action*/) {
-  let token = yield select(state => state.session.token);
-  token = localStorage.getItem(SESSION_TOKEN);
-  console.log(token);
+  let token = localStorage.getItem(SESSION_TOKEN);
   yield put({
     type: TOKEN_NOT_FOUND,
     token
   });
-  //   if (token !== null) {
-    
-   // yield (API.defaults.headers.common.Authorization = `Bearer ${token}`);
-//   }
+}
+
+export function* handleLoginRequestAction(action) {
+    // Check username
+        yield put({ type: LOGIN_REQUEST_SUCCESS, token: `${action.username}_${action.password}` });
+        history.push(`${process.env.PUBLIC_URL}/home`);
+        yield saveToken(`${action.username}_${action.password}`);
+
+  
 }

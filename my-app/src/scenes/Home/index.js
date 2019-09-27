@@ -1,25 +1,40 @@
-import React from 'react';
-import logo from '../../logo.svg';
+import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
+import {  getStoredToken } from "../../actions/session";
+import PropTypes from "prop-types";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React HOME
-        </a>
-      </header>
-    </div>
-  );
+import history from '../../services/history';
+
+class Home extends Component {
+  constructor(props, context) {
+    super(props, context);
+   this.props.dispatch(getStoredToken())
+  }
+  static propTypes = {
+    dispatch: PropTypes.func,
+    token: PropTypes.string,
+  };
+componentDidMount(){
+}
+  render() {
+    const {token} =this.props;
+    if (!this.props.token) {
+      history.push('/login');
+    }
+    return (
+      <div id="home">
+        <span>holi</span>
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+  const { token  } = state.session;
+
+  return {
+    token
+  };
+};
+export default connect(mapStateToProps)(Home);
