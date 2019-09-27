@@ -1,0 +1,22 @@
+#slideMenuJasper .ant-menu-item {
+    display:flex;
+    align-items: center;
+  }
+
+#slideMenuJasper .menuItemIndex{
+    margin-top: 0px !important;
+  }
+  
+#slideMenuJasper .tittle-font-Awesome-for-selector {
+    margin-left: 10px;
+    font-size: 15px;
+  }
+
+#slideMenuJasper .tittle-for-selector {
+    font-size: 15px;
+  
+  }    
+
+#slideMenuJasper  .imageIcon {
+    font-size: 22px !important;
+  }  
