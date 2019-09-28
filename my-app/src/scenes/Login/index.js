@@ -14,13 +14,9 @@ class Login extends Component {
             <Row id="loginWrapper" type="flex" justify="center" align="middle" >
                 <Col xs={2} md={6}/>
                 <Col xs={20}  md={12} >
-                    <Row type="flex"style={{backgroundColor:'#f7c600'}}>
-                        <Col   span={8} justify="center" >
-                            <Row type="flex" justify="center"style={{height:'170px',   overflow: 'auto'}}>
-                                <Col span={24}  >
-                                    <img className='imageLogin' src="/comercio_logo.png"  />    
-                                </Col>
-                            </Row>
+                    <Row align="middle" type="flex" className='LoginRow' style={{backgroundColor:'#f7c600'}}>
+                        <Col   span={8}  >
+                            <img className='imageLogin' src="/comercio_logo.png"  />    
                         </Col>
                         <Col   span={16}  >
                             <LoginForm/>

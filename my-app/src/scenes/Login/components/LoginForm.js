@@ -22,7 +22,12 @@ class NormalLoginForm extends Component {
       }
     });
   };
-
+  register= ()=> {
+    console.log('register')
+  }
+  unknown= ()=> {
+    console.log('anonimo')
+  }
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
@@ -51,6 +56,12 @@ class NormalLoginForm extends Component {
         <Form.Item>
           <Button  htmlType="submit" className="login-form-button">
             Log in
+          </Button>
+          <Button  onclick={()=>this.register()} className="login-form-button">
+            registrar
+          </Button>
+          <Button  onclick={()=>this.unknown()}className="login-form-button">
+            Denuncia anónima
           </Button>
         </Form.Item>
       </Form>

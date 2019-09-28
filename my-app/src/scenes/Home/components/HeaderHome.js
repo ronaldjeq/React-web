@@ -6,7 +6,7 @@ import './HeaderHome.css'
 const BlueMenu = ({ handleLogout }) => (
     <div id="headerHome">
 
-        <Row className='headerRow' type="flex" align="middle" type="flex">
+        <Row className='headerRow'  align="middle" type="flex">
             <Col push={2} span={8}>
                 <img className='imageHeader' src="/logo-comercio.png"  />    
             </Col>
